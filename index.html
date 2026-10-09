@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assinatura de E-mail — gere assinaturas profissionais em HTML</title>
+  <meta name="description" content="Gerador gratuito de assinatura de e-mail em HTML: três modelos, foto, redes sociais, WhatsApp e cor da marca. Compatível com Gmail, Outlook, Apple Mail e Thunderbird.">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Assinatura de E-mail</h1>
+    <p class="lead">Gere uma assinatura profissional em HTML e cole no Gmail, Outlook, Apple Mail ou Thunderbird.</p>
+  </header>
+
+  <main>
+    <div class="layout">
+      <form class="card form" id="form" novalidate aria-labelledby="form-title">
+        <div class="card-head">
+          <h2 id="form-title">Seus dados</h2>
+          <div class="actions">
+            <button type="button" class="btn secondary small" id="example">Exemplo</button>
+            <button type="button" class="btn secondary small" id="clear">Limpar</button>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Identificação</legend>
+          <div class="fields">
+            <div class="field full"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" maxlength="200"></div>
+            <div class="field"><label for="cargo">Cargo</label><input id="cargo" name="cargo" autocomplete="organization-title" maxlength="200"></div>
+            <div class="field"><label for="empresa">Empresa</label><input id="empresa" name="empresa" autocomplete="organization" maxlength="200"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contato</legend>
+          <div class="fields">
+            <div class="field"><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" inputmode="tel" placeholder="(19) 3333-4444" maxlength="40"></div>
+            <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" placeholder="(19) 99999-9999" maxlength="40"></div>
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" inputmode="email" placeholder="voce@example.com" maxlength="254"></div>
+            <div class="field"><label for="site">Site</label><input id="site" name="site" type="url" inputmode="url" placeholder="example.com" maxlength="300"></div>
+            <div class="field full"><label for="endereco">Endereço</label><input id="endereco" name="endereco" placeholder="Rua, número — bairro, cidade/UF" maxlength="300"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Redes sociais</legend>
+          <p class="hint">Pode ser o endereço completo do perfil ou só o nome de usuário.</p>
+          <div class="fields three">
+            <div class="field"><label for="linkedin">LinkedIn</label><input id="linkedin" name="linkedin" placeholder="seu-usuario" maxlength="300"></div>
+            <div class="field"><label for="instagram">Instagram</label><input id="instagram" name="instagram" placeholder="@seuusuario" maxlength="300"></div>
+            <div class="field"><label for="github">GitHub</label><input id="github" name="github" placeholder="seu-usuario" maxlength="300"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Aparência</legend>
+          <div class="fields">
+            <div class="field full">
+              <label for="foto">URL da foto ou do logo</label>
+              <input id="foto" name="foto" type="url" inputmode="url" placeholder="https://example.com/foto.jpg" maxlength="1000" aria-describedby="foto-hint">
+              <p class="hint" id="foto-hint">Use o endereço de uma imagem publicada na internet (https://…), como a foto do seu site. Programas de e-mail não levam arquivos do seu computador junto com a assinatura: quem recebe só vê imagens hospedadas online. Prefira uma imagem quadrada com pelo menos 192×192 px.</p>
+            </div>
+            <div class="field">
+              <label for="cor">Cor de destaque</label>
+              <div class="color-row"><input id="cor" name="cor" type="color" value="#0f766e"><code id="cor-valor">#0f766e</code></div>
+            </div>
+          </div>
+          <div class="layouts" role="radiogroup" aria-labelledby="layout-label">
+            <p class="group-label" id="layout-label">Modelo</p>
+            <div class="layout-options">
+              <input type="radio" name="layout" id="layout-classico" value="classico"><label for="layout-classico"><strong>Clássico</strong><span>foto à esquerda e linha colorida</span></label>
+              <input type="radio" name="layout" id="layout-compacto" value="compacto"><label for="layout-compacto"><strong>Compacto</strong><span>poucas linhas, ideal para respostas</span></label>
+              <input type="radio" name="layout" id="layout-moderno" value="moderno"><label for="layout-moderno"><strong>Moderno</strong><span>barra colorida e nome em destaque</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Aviso legal (opcional)</legend>
+          <label for="aviso" class="sr-only">Texto do aviso legal</label>
+          <textarea id="aviso" name="aviso" rows="3" maxlength="800" placeholder="Ex.: Esta mensagem pode conter informações confidenciais. Se você a recebeu por engano, avise o remetente e apague-a."></textarea>
+        </fieldset>
+      </form>
+
+      <div class="side">
+        <section class="card preview-card" aria-labelledby="preview-title">
+          <h2 id="preview-title">Pré-visualização</h2>
+          <div class="preview-frame">
+            <iframe id="preview" title="Pré-visualização da assinatura" sandbox="allow-same-origin"></iframe>
+          </div>
+          <div class="actions copy-actions">
+            <button type="button" class="btn" id="copy-rich">Copiar assinatura</button>
+            <button type="button" class="btn secondary" id="copy-html">Copiar código HTML</button>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+          <div class="warnings" id="warnings" aria-live="polite"></div>
+        </section>
+
+        <section class="card" aria-labelledby="install-title">
+          <h2 id="install-title">Como instalar</h2>
+          <details>
+            <summary>Gmail</summary>
+            <ol>
+              <li>Clique em <strong>Copiar assinatura</strong>.</li>
+              <li>No Gmail (no computador), abra as <strong>Configurações</strong> (ícone de engrenagem) e clique em <strong>Ver todas as configurações</strong>.</li>
+              <li>Na aba <strong>Geral</strong>, desça até <strong>Assinatura</strong> e clique em <strong>Criar nova</strong>.</li>
+              <li>Dê um nome, clique na caixa de texto e cole (Ctrl+V ou ⌘+V).</li>
+              <li>Em <strong>Padrões de assinatura</strong>, escolha quando usá-la e clique em <strong>Salvar alterações</strong>, no fim da página.</li>
+            </ol>
+          </details>
+          <details>
+            <summary>Outlook na web (Outlook.com e Microsoft 365)</summary>
+            <ol>
+              <li>Clique em <strong>Copiar assinatura</strong>.</li>
+              <li>Abra as <strong>Configurações</strong> (ícone de engrenagem) e procure por <strong>Assinaturas</strong> (fica em <strong>Contas</strong> nas versões mais recentes).</li>
+              <li>Crie uma nova assinatura, cole na caixa de edição e salve.</li>
+              <li>Escolha a assinatura padrão para novas mensagens e para respostas.</li>
+            </ol>
+          </details>
+          <details>
+            <summary>Outlook no Windows (versão clássica)</summary>
+            <ol>
+              <li>Clique em <strong>Copiar assinatura</strong>.</li>
+              <li>No Outlook, vá em <strong>Arquivo › Opções › Email</strong> e clique em <strong>Assinaturas…</strong>.</li>
+              <li>Clique em <strong>Novo</strong>, dê um nome e cole no campo de edição.</li>
+              <li>Escolha a assinatura padrão para novas mensagens e para respostas e clique em <strong>OK</strong>.</li>
+            </ol>
+            <p class="hint">O novo Outlook para Windows segue os mesmos passos da versão web.</p>
+          </details>
+          <details>
+            <summary>Apple Mail (Mac)</summary>
+            <ol>
+              <li>Clique em <strong>Copiar assinatura</strong>.</li>
+              <li>No Mail, abra <strong>Mail › Ajustes</strong> (ou <strong>Preferências</strong>, em versões antigas do macOS) e vá em <strong>Assinaturas</strong>.</li>
+              <li>Escolha a conta, clique em <strong>+</strong> e cole a assinatura no lugar do texto de exemplo.</li>
+              <li>Desmarque a opção que força a fonte padrão das mensagens, para a formatação não se perder.</li>
+            </ol>
+          </details>
+          <details>
+            <summary>Thunderbird</summary>
+            <ol>
+              <li>Clique em <strong>Copiar código HTML</strong>.</li>
+              <li>Abra as <strong>Configurações de contas</strong> e selecione a sua conta de e-mail.</li>
+              <li>Em <strong>Texto da assinatura</strong>, marque a opção <strong>Usar HTML</strong> e cole o código.</li>
+            </ol>
+          </details>
+          <p class="hint">A foto não aparece? Abra o endereço dela no navegador: deve mostrar só a imagem. Alguns programas também só exibem imagens depois que o destinatário permite.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tudo roda no seu navegador: seus dados não são enviados para nenhum servidor. Código aberto no <a href="https://github.com/micdog22/assinatura-de-email">GitHub</a> · Licença MIT</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "assinatura-de-email",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gerador de assinaturas de e-mail profissionais em HTML, compatíveis com Gmail, Outlook, Apple Mail e Thunderbird",
+  "type": "module",
+  "scripts": { "test": "node --test" },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/micdog22/assinatura-de-email.git" },
+  "homepage": "https://micdog22.github.io/assinatura-de-email/"
+}
