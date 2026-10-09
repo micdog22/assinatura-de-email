@@ -1,4 +1,4 @@
-# Assinatura de E-mail — gere assinaturas profissionais em HTML (HTML + JS)
+# Assinatura de E-mail: gere assinaturas profissionais em HTML (HTML + JS)
 
 Montar uma assinatura de e-mail bonita costuma terminar em imagem colada (que vira anexo) ou em HTML que quebra no Outlook. Este gerador cria a assinatura do jeito que os programas de e-mail entendem: tabelas, estilos inline, fontes seguras e nenhum script. Você preenche o formulário, confere a pré-visualização e cola no Gmail, Outlook, Apple Mail ou Thunderbird.
 
@@ -57,4 +57,4 @@ Issues e pull requests são bem-vindos.
 
 ## Licença
 
-MIT — veja [LICENSE](LICENSE).
+MIT. Veja [LICENSE](LICENSE).

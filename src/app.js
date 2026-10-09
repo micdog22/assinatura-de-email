@@ -13,7 +13,7 @@ const EXAMPLE = {
   whatsapp: '(19) 99999-9999',
   email: 'maria@example.com',
   site: 'example.com',
-  endereco: 'Rua Exemplo, 100 — Centro, São Paulo/SP',
+  endereco: 'Rua Exemplo, 100, Centro, São Paulo/SP',
   linkedin: 'maria-exemplo',
   instagram: '@lanchonete.exemplo',
   github: '',
